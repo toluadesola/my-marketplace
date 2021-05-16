@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:replace="fragment/admin/head :: head"></head>
+
+<body>
+<div id="wrapper">
+  <nav th:replace="fragment/admin/nav :: navtop"></nav>
+  <!--/. NAV TOP  -->
+  <nav th:replace="fragment/admin/nav :: navside"></nav>
+  <!-- /. NAV SIDE  -->
+  <div id="page-wrapper">
+    <div id="page-inner">
+
+
+      <!-- /. ROW  -->
+      <footer th:replace="fragment/admin/footer :: footer"></footer>
+    </div>
+    <!-- /. PAGE INNER  -->
+  </div>
+  <!-- /. PAGE WRAPPER  -->
+</div>
+
+<div th:replace="fragment/admin/js :: js"></div>
+
+</body>
+
+</html>

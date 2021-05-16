@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:replace="fragment/head :: head"></head>
+<body>
+
+<!-- Wrap -->
+<div id="wrap">
+
+  <header th:replace="fragment/header :: header"></header>
+
+  <!-- Content -->
+  <div id="content">
+
+    <!-- Papular Companies -->
+    <section class="padding-bottom-100">
+      <div class="compny-profile">
+        <!-- SUB Banner -->
+        <div class="profile-bnr">
+          <div class="container">
+
+            <!-- User Info -->
+            <div class="user-info">
+              <div class="col-left">
+                <div class="user-in">
+                  <h1>Webicode Technology Inc. <a class="veri" href="#." data-toggle="tooltip" data-placement="top" title="Verified"> <i class="fa fa-check"></i> </a> </h1>
+                  <h6>Information Technology</h6>
+                  <p>121 King Street, Melbourne Victoria 3000 Australia  ( <a href="#.">View Location</a> )</p>
+                </div>
+              </div>
+
+              <!-- Col Info -->
+              <div class="col-left">
+                <div class="user-in">
+                  <div class="right-top-bnr">
+                    <div class="connect"> <a href="#." data-toggle="modal" data-target="#myModal"><i class="fa fa-user-plus"></i> Contact Company</a> <a href="#."><i class="fa fa-user-plus"></i> Follow</a> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal POPUP -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <h6><a class="close" href="#." data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></a> Send Message</h6>
+                <!-- Forms -->
+                <form action="#">
+                  <ul class="row">
+                    <li class="col-md-6">
+                      <input type="text" placeholder="First Name" class="form-control">
+                    </li>
+                    <li class="col-md-6">
+                      <input type="text" placeholder="Last Name" class="form-control">
+                    </li>
+                    <li class="col-md-6">
+                      <input type="text" placeholder="Country" class="form-control">
+                    </li>
+                    <li class="col-md-6">
+                      <input type="text" placeholder="Email" class="form-control">
+                    </li>
+                    <li class="col-md-12">
+                      <textarea placeholder="Your Message" class="form-control"></textarea>
+                    </li>
+                    <li class="col-md-12 text-center">
+                      <button class="btn">Send message</button>
+                    </li>
+                  </ul>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile Company Content -->
+        <div class="profile-company-content main-user">
+          <div class="container">
+
+            <!-- Nav Tabs -->
+            <div class="navi-sticky">
+              <div class="sticky">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li><a class="nav-link active" data-toggle="tab" href="#about" role="tab" aria-selected="true">About</a> </li>
+                  <li><a class="nav-link" data-toggle="tab" href="#services" role="tab" aria-selected="true">Services</a> </li>
+                  <li><a class="nav-link" data-toggle="tab" href="#portfolio" role="tab" aria-selected="true">Portfolio</a> </li>
+                  <li><a class="nav-link" data-toggle="tab" href="#jobs" role="tab" aria-selected="true">Jobs</a> </li>
+                  <li><a class="nav-link" data-toggle="tab" href="#contact" role="tab" aria-selected="true">Contact</a> </li>
+                  <li><a class="nav-link" data-toggle="tab" href="#support" role="tab" aria-selected="true">Support</a> </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <!-- SIDE BAR -->
+              <div class="col-lg-4">
+
+                <!-- Company Information -->
+                <div class="sidebar">
+
+                  <!-- Heading for mobile Collapse -->
+                  <h5 class="main-title">Company Information</h5>
+                  <div class="navbar-expand-lg">
+                    <!-- Heading for mobile Collapse -->
+                    <a class="collapsed main-title fr-mob" data-toggle="collapse" data-target="#cmpny-info" aria-expanded="false"> Company Information </a>
+                    <div class="collapse navbar-collapse" id="cmpny-info">
+                      <div class="side-bar-indide">
+
+                        <!-- Company Images -->
+                        <div class="compny-thumbnail"> <img class="img-responsive" src="images/company-img-1.jpg" alt=""> </div>
+
+                        <!-- Company Information -->
+                        <div class="sidebar-information">
+                          <ul class="single-category">
+                            <li>
+                              <h6 class="title">Industry</h6>
+                              <span class="subtitle">Information Technology</span> </li>
+                            <li>
+                              <h6 class="title">Location</h6>
+                              <span class="subtitle">Melbourne, Australia</span> </li>
+                            <li>
+                              <h6 class="title">Employees</h6>
+                              <span class="subtitle">21,245</span> </li>
+                            <li>
+                              <h6 class="title">Legal Entity</h6>
+                              <span class="subtitle">Gesselschaft</span> </li>
+                            <li>
+                              <h6 class="title">Company Registration</h6>
+                              <span class="subtitle">HFR67656</span> </li>
+                            <li>
+                              <h6 class="title">Operating Hours</h6>
+                              <span class="subtitle">10:00 AM - 5:00 PM</span> </li>
+                            <li>
+                              <h6 class="title">Contacts</h6>
+                              <div class="subtitle"><a href="#.">example@example.com</a> </div>
+                            </li>
+                            <li>
+                              <h6 class="title">Website</h6>
+                              <div class="subtitle"> <a href="https://webicode.com/" target="_blank">https://webicode.com</a> </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Company Rating -->
+                <div class="sidebar">
+                  <h5 class="main-title">Company Rating</h5>
+                  <div class="navbar-expand-lg">
+                    <!-- Heading for mobile Collapse -->
+                    <a class="collapsed main-title fr-mob" data-toggle="collapse" data-target="#cmpny-rtng" aria-expanded="false"> Company Rating </a>
+                    <div class="collapse navbar-collapse" id="cmpny-rtng">
+                      <div class="side-bar-indide">
+                        <div class="sidebar-information">
+                          <ul class="single-category com-rate">
+                            <li>
+                              <h6 class="title">Expertise:</h6>
+                              <span class="subtitle"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fas fa-star-half-alt"></i> </span> </li>
+                            <li>
+                              <h6 class="title">Knowledge:</h6>
+                              <span class="subtitle"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> </span> </li>
+                            <li>
+                              <h6 class="title">Quality:</h6>
+                              <span class="subtitle"><i class="fas fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fas fa-star-half-alt"></i> </span> </li>
+                            <li>
+                              <h6 class="title">Price:</h6>
+                              <span class="subtitle"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> <i class="far fa-star"></i> </span> </li>
+                            <li>
+                              <h6 class="title">Services:</h6>
+                              <span class="subtitle"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </span> </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab Content -->
+              <div class="col-lg-8">
+                <div class="tab-content">
+
+                  <!-- About Company -->
+                  <div id="about" class="tab-pane fade show active">
+                    <div class="profile-main">
+                      <h3>About the Company</h3>
+                      <div class="profile-in">
+                        <h1>insert about here</h1>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="services" class="tab-pane fade">
+                    <div class="profile-main">
+                      <h3>Services</h3>
+                      <div class="profile-in">
+                        <div class="row">
+
+                          <!-- Icon -->
+                          <div class="col-md-6">
+                            <div class="icon-box ib-style-5 ib-center ib-text-alt ib-bordered ib-bordered-white ib-bordered-thin ib-medium ib-circle">
+                              <div class="ib-icon"> <i class="far fa-gem"></i> </div>
+                              <div class="ib-info">
+                                <h4 class="h6">Web Design</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, </p>
+                                <a href="#">Contact Now </a> </div>
+                            </div>
+                          </div>
+
+                          <!-- Icon -->
+                          <div class="col-md-6">
+                            <div class="icon-box ib-style-5 ib-center ib-text-alt ib-bordered ib-bordered-white ib-bordered-thin ib-medium ib-circle">
+                              <div class="ib-icon"> <i class="fas fa-anchor"></i> </div>
+                              <div class="ib-info">
+                                <h4 class="h6">Motion Graphic</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, </p>
+                                <a href="#">Contact Now </a> </div>
+                            </div>
+                          </div>
+
+                          <!-- Icon -->
+                          <div class="col-md-6">
+                            <div class="icon-box ib-style-5 ib-center ib-text-alt ib-bordered ib-bordered-white ib-bordered-thin ib-medium ib-circle">
+                              <div class="ib-icon"> <i class="fab fa-viacoin"></i> </div>
+                              <div class="ib-info">
+                                <h4 class="h6">Branding Design</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, </p>
+                                <a href="#">Contact Now </a> </div>
+                            </div>
+                          </div>
+
+                          <!-- Icon -->
+                          <div class="col-md-6">
+                            <div class="icon-box ib-style-5 ib-center ib-text-alt ib-bordered ib-bordered-white ib-bordered-thin ib-medium ib-circle">
+                              <div class="ib-icon"> <i class="fa fa-trophy"></i> </div>
+                              <div class="ib-info">
+                                <h4 class="h6">Google Sell</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, </p>
+                                <a href="#">Contact Now </a> </div>
+                            </div>
+                          </div>
+
+                          <!-- Icon -->
+                          <div class="col-md-6">
+                            <div class="icon-box ib-style-5 ib-center ib-text-alt ib-bordered ib-bordered-white ib-bordered-thin ib-medium ib-circle">
+                              <div class="ib-icon"> <i class="fa fa-anchor"></i> </div>
+                              <div class="ib-info">
+                                <h4 class="h6">Motion Graphic</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, </p>
+                                <a href="#">Contact Now </a> </div>
+                            </div>
+                          </div>
+
+                          <!-- Icon -->
+                          <div class="col-md-6">
+                            <div class="icon-box ib-style-5 ib-center ib-text-alt ib-bordered ib-bordered-white ib-bordered-thin ib-medium ib-circle">
+                              <div class="ib-icon"> <i class="far fa-gem"></i> </div>
+                              <div class="ib-info">
+                                <h4 class="h6">Branding Design</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, </p>
+                                <a href="#">Contact Now </a> </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="bg-white">
+      <!-- Right Background -->
+      <div class="main-page-section half_left_layout">
+        <div class="main-half-layout half_right_layout"> </div>
+      </div>
+      <div class="clearfix"></div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer" th:replace="fragment/footer :: footer"></footer>
+  <!-- End Footer -->
+
+</div>
+<div th:replace="fragment/js :: js"></div>
+</body>
+
+</html>

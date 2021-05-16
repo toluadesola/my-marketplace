@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:replace="fragment/admin/head :: head"></head>
+
+<body>
+<div id="wrapper">
+  <nav th:replace="fragment/admin/nav :: navtop"></nav>
+  <!--/. NAV TOP  -->
+  <nav th:replace="fragment/admin/nav :: navside"></nav>
+  <!-- /. NAV SIDE  -->
+  <div id="page-wrapper">
+    <div id="page-inner">
+
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              Basic Form Elements
+            </div>
+              <div th:if="${session.message}">
+                  <h2 th:text="${session.message}"/>
+              </div>
+            <div class="panel-body">
+              <form th:action="@{/admin/save/company}" th:object="${company}" method="post" enctype="multipart/form-data">
+
+                <div class="row">
+                  <div class="col-md-8 mr-5">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">Company Name</label>
+                          <input type="text" class="form-control" name="companyName" th:field="*{companyName}" placeholder=""
+                                 required>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">Role in Company</label>
+                          <input type="text" class="form-control" name="roleInCompany" th:field="*{roleInCompany}" placeholder=""
+                                 required>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label >Description</label>
+                          <textarea class="form-control" name="description" th:text="*{description}" required></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">Company Address</label>
+                          <textarea class="form-control" name="companyAddress" th:text="*{companyAddress}" required></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">Company Email</label>
+                          <input type="email" class="form-control" name="companyEmail" th:field="*{companyEmail}" placeholder="Email">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">Company Phone</label>
+                          <input type="text" class="form-control" name="companyPhoneNumber" th:field="*{companyPhoneNumber}" placeholder="Phone: (999) 999-9999"
+                                 required>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">Industry</label>
+                          <select class="form-control" name="industryType" th:field="*{industryType}" required>
+                            <option th:value>Select Industry...</option>
+                            <option th:value="Agriculture">Agriculture</option>
+                            <option th:value="Barber">Barber</option>
+                            <option th:value="Construction">Construction</option>
+                            <option th:value="Plumber">Plumber</option>
+                            <option th:value="Tailor">Tailor</option>
+                            <option th:value="ICT">ICT</option>
+                            <option th:value="Mechanic">Mechanic</option>
+                            <option th:value="Electrician">Electrician</option>
+                            <option th:value="Petroleum">Petroleum</option>
+                            <option th:value="Real_Estate">Real Estate</option>
+                            <option th:value="Utilities">Utilities</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">Company Website</label>
+                          <input type="text" class="form-control" name="companyWebsite" th:field="*{companyWebsite}" placeholder="Url">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">Number of Employees</label>
+                          <input type="text" class="form-control" name="numberOfEmployees" th:field="*{numberOfEmployees}" placeholder="Required">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">State</label>
+                          <select class="form-control" name="state" th:field="*{state}" required>
+                            <option th:value>Select State...</option>
+                            <option th:value="Ekiti">Ekiti</option>
+                            <option th:value="Lagos">Lagos</option>
+                            <option th:value="Ondo">Ondo</option>
+                            <option th:value="Abuja">Abuja</option>
+                            <option th:value="Kaduna">Kaduna</option>
+                            <option th:value="Enugu">Enugu</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">LGA</label>
+                          <select class="form-control" name="lga" th:field="*{lga}" required>
+                            <option th:value>Select LGA...</option>
+                            <option th:value="Epe">Epe</option>
+                            <option th:value="Ikeja">Ikeja</option>
+                            <option th:value="Akure">Akure</option>
+                            <option th:value="Gwagwalada">Gwagwalada</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">City</label>
+                          <select class="form-control" name="city" th:field="*{city}" required>
+                            <option th:value>Select City...</option>
+                            <option th:value="ikeja">ikeja</option>
+                            <option th:value="wuse">wuse</option>
+                            <option th:value="akure">akure</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="form-label">Thumbnail Image</label><br>
+                          <img src="" id="image" class="" style="width:150px; height:150px;">
+                          <br>
+                          <small class="text-warning font-weight-bold">Upload passport in jpeg
+                            format not bigger than 50kb</small>
+                          <br>
+                          <div>
+                            <input type="file" name="image" placeholder="Upload"
+                                   class="form-control" onchange="loadFile(event)"
+                                   data-max-file-size="50kb">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="form-label">Twitter</label>
+                          <input type="text"
+                                 class="form-control" name="twitter" th:field="*{twitter}" placeholder="Twitter">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="form-label">Facebook</label>
+                          <input type="text" class="form-control" name="facebook" th:field="*{facebook}" placeholder="Facebook">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="form-label">Instagram</label>
+                          <input type="text"
+                                 class="form-control" name="instagram" th:field="*{instagram}" placeholder="Instagram" >
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="form-label">LinkedIn</label>
+                          <input type="text" class="form-control" name="linkedIn" th:field="*{linkedIn}" placeholder="LinkedIn">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.col-lg-6 (nested) -->
+                </div>
+                <button type="submit" class="btn  btn-primary">Submit</button>
+              </form>
+
+
+              <!-- /.row (nested) -->
+            </div>
+            <!-- /.panel-body -->
+          </div>
+          <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+      </div>
+
+
+      <!-- /. ROW  -->
+      <footer th:replace="fragment/admin/footer :: footer"></footer>
+    </div>
+    <!-- /. PAGE INNER  -->
+  </div>
+  <!-- /. PAGE WRAPPER  -->
+</div>
+
+<div th:replace="fragment/admin/js :: js"></div>
+
+</body>
+
+</html>
