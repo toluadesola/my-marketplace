@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:replace="fragment/head :: head"></head>
+<body>
+
+<!-- Wrap -->
+<div id="wrap">
+
+  <header th:replace="fragment/header :: header"></header>
+
+  <!-- Content -->
+  <div id="content">
+
+    <!-- Banner -->
+    <section class="sub-bnr">
+      <div class="container">
+        <h2>All Companies</h2>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Companies</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+
+    <!-- Papular Professionals -->
+    <main class="cd-main-content">
+      <section class="padding-top-100">
+        <div class="container">
+
+          <!-- filter -->
+          <div class="cd-tab-filter-wrapper filter-wrapper">
+            <div class="cd-tab-filter">
+
+              <!-- filter Btns -->
+              <ul class="cd-filters">
+                <li class="placeholder"> <a data-type="all" href="#0">All</a> </li>
+                <li class="filter"><a class="selected" href="#0" data-type="all">All</a></li>
+                <li th:each="company : ${companies}" class="filter" th:data-filter="@{'.'+${company.industryType}}">
+                  <a href="#0">
+                    <span th:text="${company.industryType}"></span>
+                  </a>
+                </li>
+              </ul>
+
+              <!-- Search -->
+              <div class="filter-search"> <a class="fltr-srch collapsed" data-toggle="collapse" href="#filter-detail"
+                                             role="button" aria-expanded="false" aria-controls="collapseExample"> Advance Search <i class="fa fa-filter"></i> </a>
+
+                <!-- Filter Details -->
+                <div class="inside-from">
+                  <div class="collapse" id="filter-detail">
+                    <div class="card">
+                      <form>
+                        <ul>
+                          <!-- Company Name -->
+                          <li>
+                            <label>
+                              <input type="search" class="form-control" placeholder="Company Name">
+                            </label>
+                          </li>
+                          <!-- City -->
+                          <li>
+                            <label>
+                              <input type="text" class="form-control" placeholder="City">
+                            </label>
+                          </li>
+                          <!-- Select -->
+                          <li>
+                            <label>
+                              <select class="form-control">
+                                <option>Companies</option>
+                                <option>Coporate</option>
+                                <option>Indiviual</option>
+                                <option>Freelance</option>
+                                <option>Agency</option>
+                              </select>
+                            </label>
+                          </li>
+                          <li>
+                            <button type="submit" class="btn">Search</button>
+                          </li>
+                        </ul>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comapnies Iteam -->
+          <section class="cd-gallery">
+            <ul>
+
+              <!-- Comapany List -->
+              <li th:class="@{'mix '+${company.industryType}}" th:each="company : ${companies}">
+                <div class="com-inside">
+                  <div class="img-sec">
+                    <img th:src="@{'images/'+${company.images}}" style="height: 270px; width: 280px;" class="img-responsive" alt="" >
+                    <div class="hover-over">
+                      <div class="position-center-center"><a th:href="@{'/company_detail?id='+${company.id}}" class="btn">Details</a> </div>
+                    </div>
+                  </div>
+                  <div class="txt-sec">
+                    <h5><a href="/company_detail"> <span th:text="${company.companyName}"></span> </a></h5>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+
+            <!-- Btn Center -->
+            <div class="btn-center margin-top-30 margin-bottom-100 text-center"> <a href="#." class="btn btn-inverse">View More</a> </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer" th:replace="fragment/footer :: footer"></footer>
+  <!-- End Footer -->
+</div>
+<div th:replace="fragment/js :: js"></div>
+</body>
+</html>

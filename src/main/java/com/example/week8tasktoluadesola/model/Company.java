@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -42,4 +43,6 @@ public class Company {
 
     @OneToOne
     private User user;
+    @OneToMany
+    List<SendMail> sendMail;
 }

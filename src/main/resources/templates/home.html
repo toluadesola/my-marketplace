@@ -126,11 +126,11 @@
                   <div class="img-sec">
                       <img th:src="@{'images/'+${company.images}}" style="height: 380px; width: 350px" class="img-responsive" alt="" >
                     <div class="hover-over">
-                      <div class="position-center-center"><a href="/company_detail" class="btn">Details</a> </div>
+                      <div class="position-center-center"><a th:href="@{'/company_detail?id='+${company.id}}" class="btn">Details</a> </div>
                     </div>
                   </div>
                   <div class="txt-sec">
-                    <h5><a href="companies-detail.html"> <span th:text="${company.companyName}"></span> </a></h5>
+                    <h5><a href="/company_detail"> <span th:text="${company.companyName}"></span> </a></h5>
                   </div>
                 </div>
               </div>
@@ -139,7 +139,7 @@
         </div>
 
         <!-- Btn Center -->
-        <div class="btn-center margin-top-30 text-center"> <a href="#." class="btn btn-inverse">View All Companies</a> </div>
+        <div class="btn-center margin-top-30 text-center"> <a href="/company_all" class="btn btn-inverse">View All Companies</a> </div>
       </div>
     </section>
 
@@ -150,7 +150,7 @@
         <!-- Heading Block -->
         <div class="heading-block text-center">
           <h2>Testimonials</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue conseqaut nibbhi ellit ipsum consectetur. </p>
+          <p>Here are a few testimonies from some of our clients </p>
         </div>
 
         <!-- Testimonial Style 4 -->
@@ -161,33 +161,29 @@
 
               <!-- Slides -->
               <div>
-                <!-- Avatar -->
-                <div class="avatar"><img class="img-circle img-responsive" src="images/testimonial-2a.png" alt=" "></div>
                 <div class="text-in">
-                  <p>“There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,
-                    or randomised words which don't look even slightly believable.” </p>
-                  <h6>WHITE SHADOW WALKER</h6>
-                  <span> CEO/FOUNDER DELL</span></div>
+                  <p>“In a world where we need to build trusts and relationships i present you this very beautiful platform” </p>
+                  <h6>WHITE WALKER</h6>
+                  <span>WHITE WALKER(GOT)</span>
+                </div>
               </div>
 
               <!-- Slides -->
               <div>
-                <!-- Avatar -->
-                <div class="avatar"><img class="img-circle img-responsive" src="images/testimonial-2b.png" alt=" "></div>
                 <div class="text-in">
-                  <p>“There are many variations  but the majority have suffered alteration. but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.”</p>
-                  <h6>M_ADNAN</h6>
-                  <span> CEO/FOUNDER DELL</span></div>
+                  <p>“A nice place. I met a lot of beautiful people.”</p>
+                  <h6>IRON MAN</h6>
+                  <span>STARK TECHNOLOGIES</span>
+                </div>
               </div>
 
               <!-- Slides 1 -->
               <div>
-                <!-- Avatar -->
-                <div class="avatar"><img class="img-circle img-responsive" src="images/testimonial-2c.png" alt=" "></div>
                 <div class="text-in">
-                  <p>“There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, Alteration in some form randomised words which don't look even slightly believable.”</p>
-                  <h6>DAVID WALKER</h6>
-                  <span> CEO/FOUNDER DELL</span> </div>
+                  <p>“Always believe, If you believe you can achieve”</p>
+                  <h6>GADIBIA DARO</h6>
+                  <span>STACK LEAD</span>
+                </div>
               </div>
             </div>
           </div>
@@ -203,6 +199,4 @@
 </div>
 <div th:replace="fragment/js :: js"></div>
 </body>
-
-<!-- Mirrored from demos.webicode.com/html/social-net/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Oct 2020 09:32:55 GMT -->
 </html>

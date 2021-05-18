@@ -23,9 +23,9 @@
             <div class="user-info">
               <div class="col-left">
                 <div class="user-in">
-                  <h1>Webicode Technology Inc. <a class="veri" href="#." data-toggle="tooltip" data-placement="top" title="Verified"> <i class="fa fa-check"></i> </a> </h1>
-                  <h6>Information Technology</h6>
-                  <p>121 King Street, Melbourne Victoria 3000 Australia  ( <a href="#.">View Location</a> )</p>
+                  <h1><span th:text="${company.companyName}"></span> <a class="veri" href="#." data-toggle="tooltip" data-placement="top" title="Verified"> <i class="fas fa-check" aria-hidden="true"></i> </a> </h1>
+                  <h6><span th:text="${company.industryType}"></span></h6>
+                  <p><span th:text="${company.companyAddress}"></span>  ( <a href="#.">View Location</a> )</p>
                 </div>
               </div>
 
@@ -34,6 +34,13 @@
                 <div class="user-in">
                   <div class="right-top-bnr">
                     <div class="connect"> <a href="#." data-toggle="modal" data-target="#myModal"><i class="fa fa-user-plus"></i> Contact Company</a> <a href="#."><i class="fa fa-user-plus"></i> Follow</a> </div>
+                    <div class="row">
+                      <a th:if="${company.facebook}" th:href="${company.facebook}" target="_blank"><i class="fab fa-facebook"></i></a>
+                      <a th:if="${company.twitter}" th:href="${company.twitter}" target="_blank" ><i class="fab fa-twitter"></i></a>
+                      <a th:if="${company.instagram}" th:href="${company.instagram}" target="_blank" ><i class="fab fa-instagram"></i></a>
+                      <a th:if="${company.linkedIn}" th:href="${company.linkedIn}" target="_blank" ><i class="fab fa-linkedin"></i></a>
+                      <a th:if="${company.google}" th:href="${company.google}" target="_blank" ><i class="fab fa-google-plus"></i></a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -83,10 +90,7 @@
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                   <li><a class="nav-link active" data-toggle="tab" href="#about" role="tab" aria-selected="true">About</a> </li>
                   <li><a class="nav-link" data-toggle="tab" href="#services" role="tab" aria-selected="true">Services</a> </li>
-                  <li><a class="nav-link" data-toggle="tab" href="#portfolio" role="tab" aria-selected="true">Portfolio</a> </li>
-                  <li><a class="nav-link" data-toggle="tab" href="#jobs" role="tab" aria-selected="true">Jobs</a> </li>
                   <li><a class="nav-link" data-toggle="tab" href="#contact" role="tab" aria-selected="true">Contact</a> </li>
-                  <li><a class="nav-link" data-toggle="tab" href="#support" role="tab" aria-selected="true">Support</a> </li>
                 </ul>
               </div>
             </div>
@@ -106,36 +110,34 @@
                       <div class="side-bar-indide">
 
                         <!-- Company Images -->
-                        <div class="compny-thumbnail"> <img class="img-responsive" src="images/company-img-1.jpg" alt=""> </div>
+                        <div class="compny-thumbnail">
+                          <img class="img-responsive" th:src="@{'images/'+${company.images}}" alt="">
+                        </div>
 
                         <!-- Company Information -->
                         <div class="sidebar-information">
                           <ul class="single-category">
                             <li>
                               <h6 class="title">Industry</h6>
-                              <span class="subtitle">Information Technology</span> </li>
+                              <span class="subtitle" th:text="${company.industryType}"></span> </li>
                             <li>
                               <h6 class="title">Location</h6>
-                              <span class="subtitle">Melbourne, Australia</span> </li>
+                              <span class="subtitle" th:text="${company.city + ', ' + company.state}"></span> </li>
                             <li>
                               <h6 class="title">Employees</h6>
-                              <span class="subtitle">21,245</span> </li>
+                              <span class="subtitle" th:text="${company.numberOfEmployees}"></span> </li>
                             <li>
-                              <h6 class="title">Legal Entity</h6>
-                              <span class="subtitle">Gesselschaft</span> </li>
-                            <li>
-                              <h6 class="title">Company Registration</h6>
-                              <span class="subtitle">HFR67656</span> </li>
-                            <li>
-                              <h6 class="title">Operating Hours</h6>
-                              <span class="subtitle">10:00 AM - 5:00 PM</span> </li>
-                            <li>
-                              <h6 class="title">Contacts</h6>
-                              <div class="subtitle"><a href="#.">example@example.com</a> </div>
+                              <h6 class="title">Contact</h6>
+                              <span class="subtitle" th:text="${company.companyEmail}"></span>
+                              <span class="subtitle" th:text="${company.companyPhoneNumber}"></span>
                             </li>
                             <li>
                               <h6 class="title">Website</h6>
-                              <div class="subtitle"> <a href="https://webicode.com/" target="_blank">https://webicode.com</a> </div>
+                              <div class="subtitle">
+                                <a th:href="@{${company.companyWebsite}}" target="_blank">
+                                <span th:text="${company.companyWebsite}"></span>
+                                </a>
+                              </div>
                             </li>
                           </ul>
                         </div>
@@ -144,37 +146,6 @@
                   </div>
                 </div>
 
-                <!-- Company Rating -->
-                <div class="sidebar">
-                  <h5 class="main-title">Company Rating</h5>
-                  <div class="navbar-expand-lg">
-                    <!-- Heading for mobile Collapse -->
-                    <a class="collapsed main-title fr-mob" data-toggle="collapse" data-target="#cmpny-rtng" aria-expanded="false"> Company Rating </a>
-                    <div class="collapse navbar-collapse" id="cmpny-rtng">
-                      <div class="side-bar-indide">
-                        <div class="sidebar-information">
-                          <ul class="single-category com-rate">
-                            <li>
-                              <h6 class="title">Expertise:</h6>
-                              <span class="subtitle"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fas fa-star-half-alt"></i> </span> </li>
-                            <li>
-                              <h6 class="title">Knowledge:</h6>
-                              <span class="subtitle"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> </span> </li>
-                            <li>
-                              <h6 class="title">Quality:</h6>
-                              <span class="subtitle"><i class="fas fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fas fa-star-half-alt"></i> </span> </li>
-                            <li>
-                              <h6 class="title">Price:</h6>
-                              <span class="subtitle"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> <i class="far fa-star"></i> </span> </li>
-                            <li>
-                              <h6 class="title">Services:</h6>
-                              <span class="subtitle"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </span> </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               <!-- Tab Content -->
@@ -186,10 +157,11 @@
                     <div class="profile-main">
                       <h3>About the Company</h3>
                       <div class="profile-in">
-                        <h1>insert about here</h1>
+                        <span th:text="${company.description}"></span>
                       </div>
                     </div>
                   </div>
+                  <!-- Services -->
                   <div id="services" class="tab-pane fade">
                     <div class="profile-main">
                       <h3>Services</h3>
@@ -262,6 +234,36 @@
                             </div>
                           </div>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Contact -->
+                  <div id="contact" class="tab-pane fade">
+                    <div class="profile-main">
+                      <h3>Contact the Company</h3>
+                      <div class="profile-in">
+                        <p>You can send a message to us..</p>
+                        <form th:action="@{/send_mail}" th:object="${mail}" class="contact-company">
+                          <ul class="row">
+                              <input hidden name="companyId" th:value="${company.id}">
+                            <li class="col-sm-6">
+                              <input type="text" name="name" th:field="*{name}" placeholder="Full Name " class="form-control" required>
+                            </li>
+                            <li class="col-sm-6">
+                              <input type="email" name="email" th:field="*{email}" placeholder="E-mail address" class="form-control" required>
+                            </li>
+                            <li class="col-sm-6">
+                              <input type="text" name="phoneNumber" th:field="*{phoneNumber}" placeholder="Phone Number" class="form-control">
+                            </li>
+                            <li class="col-sm-6">
+                              <input type="text" name="subject" th:field="*{subject}" placeholder="Subject" class="form-control" required>
+                            </li>
+                            <li class="col-sm-12">
+                              <textarea name="text" th:text="*{text}" placeholder="Your Message" class="form-control" required></textarea>
+                            </li>
+                          </ul>
+                          <button class="btn">Send message</button>
+                        </form>
                       </div>
                     </div>
                   </div>
