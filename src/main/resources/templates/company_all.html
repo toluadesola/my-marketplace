@@ -26,7 +26,7 @@
     </section>
 
 
-    <!-- Papular Professionals -->
+    <!-- Popular Professionals -->
     <main class="cd-main-content">
       <section class="padding-top-100">
         <div class="container">
@@ -35,7 +35,7 @@
           <div class="cd-tab-filter-wrapper filter-wrapper">
             <div class="cd-tab-filter">
 
-              <!-- filter Btns -->
+              <!-- filter Btn -->
               <ul class="cd-filters">
                 <li class="placeholder"> <a data-type="all" href="#0">All</a> </li>
                 <li class="filter"><a class="selected" href="#0" data-type="all">All</a></li>
@@ -54,30 +54,27 @@
                 <div class="inside-from">
                   <div class="collapse" id="filter-detail">
                     <div class="card">
-                      <form>
+                      <form th:action="@{/search_company}" th:object="${searchCompany}" method="post">
                         <ul>
-                          <!-- Company Name -->
+                          <!--  City-->
                           <li>
                             <label>
-                              <input type="search" class="form-control" placeholder="Company Name">
-                            </label>
-                          </li>
-                          <!-- City -->
-                          <li>
-                            <label>
-                              <input type="text" class="form-control" placeholder="City">
+                              <input type="text" name="city" th:value="${city}" class="form-control" placeholder="City" required>
                             </label>
                           </li>
                           <!-- Select -->
                           <li>
                             <label>
-                              <select class="form-control">
-                                <option>Companies</option>
-                                <option>Coporate</option>
-                                <option>Indiviual</option>
-                                <option>Freelance</option>
-                                <option>Agency</option>
+                              <select name="industryType" class="form-control" required>
+                                <option  selected disabled value="">Select a service...</option>
+                                <option th:each="industry : ${industries}" th:value="${industry.industryType}"><span th:text="${industry.industryType}"></span></option>
                               </select>
+                            </label>
+                          </li>
+                          <!--Company Name-->
+                          <li>
+                            <label>
+                              <input type="search" name="companyName" th:value="${companyName}" class="form-control" placeholder="Company Name (optional)">
                             </label>
                           </li>
                           <li>
@@ -92,11 +89,11 @@
             </div>
           </div>
 
-          <!-- Comapnies Iteam -->
+          <!-- Companies Item -->
           <section class="cd-gallery">
             <ul>
 
-              <!-- Comapany List -->
+              <!-- Company List -->
               <li th:class="@{'mix '+${company.industryType}}" th:each="company : ${companies}">
                 <div class="com-inside">
                   <div class="img-sec">
@@ -106,15 +103,16 @@
                     </div>
                   </div>
                   <div class="txt-sec">
-                    <h5><a href="/company_detail"> <span th:text="${company.companyName}"></span> </a></h5>
+                    <h5><a th:href="@{'/company_detail?id='+${company.id}}"> <span th:text="${company.companyName}"></span> </a></h5>
                   </div>
                 </div>
               </li>
             </ul>
             <div class="clearfix"></div>
+            <h2 th:if ="${companies.size() < 1}">No Information available</h2>
 
             <!-- Btn Center -->
-            <div class="btn-center margin-top-30 margin-bottom-100 text-center"> <a href="#." class="btn btn-inverse">View More</a> </div>
+<!--            <div class="btn-center margin-top-30 margin-bottom-100 text-center"> <a href="#." class="btn btn-inverse">View More</a> </div>-->
           </section>
         </div>
       </section>

@@ -36,30 +36,27 @@
               <div class="inside-from">
                 <div class="collapse" id="filter-detail">
                   <div class="card">
-                    <form>
+                    <form th:action="@{/search_company}" th:object="${searchCompany}" method="post">
                       <ul>
-                        <!-- Company Name -->
+                        <!--  City-->
                         <li>
                           <label>
-                            <input type="search" class="form-control" placeholder="Company Name">
-                          </label>
-                        </li>
-                        <!-- City -->
-                        <li>
-                          <label>
-                            <input type="text" class="form-control" placeholder="City">
+                            <input type="text" name="city" th:value="${city}" class="form-control" placeholder="City" required>
                           </label>
                         </li>
                         <!-- Select -->
                         <li>
                           <label>
-                            <select class="form-control">
-                              <option>Companies</option>
-                              <option>Coporate</option>
-                              <option>Indiviual</option>
-                              <option>Freelance</option>
-                              <option>Agency</option>
+                            <select name="industryType" class="form-control" required>
+                              <option value="" selected disabled>Select a service...</option>
+                              <option th:each="industry : ${industries}" th:value="${industry.industryType}"><span th:text="${industry.industryType}"></span></option>
                             </select>
+                          </label>
+                        </li>
+                        <!--Company Name-->
+                        <li>
+                          <label>
+                            <input type="search" name="companyName" th:value="${companyName}" class="form-control" placeholder="Company Name (optional)">
                           </label>
                         </li>
                         <li>
@@ -130,7 +127,7 @@
                     </div>
                   </div>
                   <div class="txt-sec">
-                    <h5><a href="/company_detail"> <span th:text="${company.companyName}"></span> </a></h5>
+                    <h5><a th:href="@{'/company_detail?id='+${company.id}}"> <span th:text="${company.companyName}"></span> </a></h5>
                   </div>
                 </div>
               </div>
