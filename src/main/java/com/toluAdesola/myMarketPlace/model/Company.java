@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Data
@@ -20,10 +21,17 @@ public class Company {
     @GeneratedValue
     private Long id;
 
+    @NotBlank(message = "Company name cannot be empty")
     private String companyName;
+
+    @NotBlank(message = "Role cannot be empty")
     private String roleInCompany;
+
+    @NotBlank(message = "Description cannot be empty")
     private String description;
     private String companyEmail;
+
+    @NotBlank(message = "Email cannot be empty")
     private String companyPhoneNumber;
     private String companyAddress;
     private String industryType;

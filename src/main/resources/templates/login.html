@@ -39,13 +39,13 @@
                   <!-- Email -->
                   <li class="col-md-12">
                     <label> Email Address
-                      <input type="email" name="email" th:field="*{email}" placeholder="Enter Email..." class="form-control">
+                      <input type="email" name="email" th:field="*{email}" placeholder="Enter Email..." class="form-control" required>
                     </label>
                   </li>
                   <!-- Password -->
                   <li class="col-md-12">
                     <label> Password
-                      <input type="password" name="password" th:field="*{password}" placeholder="Enter Password..." class="form-control">
+                      <input type="password" name="password" th:field="*{password}" placeholder="Enter Password..." class="form-control" required>
                     </label>
                   </li>
 
@@ -76,50 +76,35 @@
                   <!-- Name -->
                   <li class="col-md-6">
                     <label> Full Name
-                      <input type="text" name="name" placeholder="" th:field="*{name}" class="form-control">
+                      <input type="text" name="name" placeholder="" th:field="*{name}" class="form-control" required>
                     </label>
                   </li>
 
                   <!-- Email -->
                   <li class="col-md-6">
                     <label> Email Address
-                      <input type="email" name="email" placeholder="" th:field="*{email}" class="form-control">
+                      <input type="email" name="email" placeholder="" th:field="*{email}" class="form-control" required>
                     </label>
                   </li>
 
                   <!-- Username -->
                   <li class="col-md-6">
                     <label> User Name
-                      <input type="text" name="username" placeholder="" th:field="*{username}" class="form-control">
+                      <input type="text" name="username" placeholder="" th:field="*{username}" class="form-control" required>
                     </label>
                   </li>
                   <!-- Password -->
                   <li class="col-md-6">
                     <label> Password
-                      <input type="password" name="password" placeholder="" th:field="*{password}" class="form-control">
+                      <input type="password" name="password" placeholder="" th:field="*{password}" class="form-control" required>
                     </label>
                   </li>
                   <!-- phoneNumber -->
                   <li class="col-md-6">
                     <label> Phone Number
-                      <input type="text" name="phoneNumber" placeholder="" th:field="*{phoneNumber}" class="form-control">
+                      <input type="text" name="phoneNumber" placeholder="" th:field="*{phoneNumber}" class="form-control" required>
                     </label>
                   </li>
-<!--                  <li  class="col-md-12">-->
-<!--                    <h5>Company Info</h5>-->
-<!--                  </li>-->
-<!--                  &lt;!&ndash; name of company &ndash;&gt;-->
-<!--                  <li class="col-md-6">-->
-<!--                    <label> Company Name-->
-<!--                      <input type="text" name="companyName" placeholder="" class="form-control">-->
-<!--                    </label>-->
-<!--                  </li>-->
-<!--                  &lt;!&ndash; role in Company &ndash;&gt;-->
-<!--                  <li class="col-md-6">-->
-<!--                    <label> Role in Company-->
-<!--                      <input type="text" name="roleInCompany" placeholder="" class="form-control">-->
-<!--                    </label>-->
-<!--                  </li>-->
                   <!-- LOGIN -->
                   <li class="col-md-12 text-center">
                     <button type="submit" class="btn">Register</button>

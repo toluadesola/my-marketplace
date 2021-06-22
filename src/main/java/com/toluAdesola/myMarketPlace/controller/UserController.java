@@ -28,7 +28,7 @@ public class UserController {
 
     @GetMapping("failedLogin")
     public String failedLogin(Model model){
-        model.addAttribute("message", "login detail e wrong dear, try again pele...");
+        model.addAttribute("message", "wrong login details, please try again...");
         model.addAttribute("users", new User());
         model.addAttribute("company", new Company());
         return "login";
